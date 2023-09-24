@@ -10,3 +10,4 @@ function addTask() {
         taskInput.value = "";
     }
 }
+
