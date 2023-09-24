@@ -2,7 +2,64 @@
 <html>
 <head>
     <title>Simple To-Do List</title>
-    <link rel="stylesheet" href="style.css">
+   
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #eee;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,7 +70,20 @@
             <!-- Tasks will be added here dynamically -->
         </ul>
     </div>
-    
-    <script src="about.js"></script>
+   <script>
+    function addTask() {
+    const taskInput = document.getElementById("task");
+    const taskText = taskInput.value.trim();
+
+    if (taskText !== "") {
+        const taskList = document.getElementById("taskList");
+        const taskItem = document.createElement("li");
+        taskItem.textContent = taskText;
+        taskList.appendChild(taskItem);
+        taskInput.value = "";
+    }
+}
+   </script> 
+   
 </body>
 </html>
